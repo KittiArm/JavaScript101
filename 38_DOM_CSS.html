@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Learn JavaScript 38</title>
+
+    <style>
+        .darkMode{
+            border: 1px solid #fff;
+            background-color: #000;
+            color: #fff;
+            padding: 30px;
+            margin: 10px;
+        }
+    </style>
+</head>
+<body>
+    <div id="box">
+        <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Saepe, molestias quod. Doloribus nostrum repellendus ea quam eligendi ipsum quos laborum nulla blanditiis similique facere, in quibusdam tempore esse? Aperiam, quae!</p>
+    </div>
+
+    <button onclick="adddarkMode()">Add</button>
+    <button onclick="removedarkMode()">Remove</button>
+    <button onclick="switchMode()">Switch</button>
+
+    <script>
+        // DOM CSS Add & Remove Class
+
+        /*
+        1. element.classList.add("class"); | add class style
+        2. element.classList.remove("class"); | remove class style
+        3. element.classList.toggle("class"); | switch class style
+        4. element.classList.contains("class"); | compare class style
+        */
+        
+        const box = document.getElementById('box');
+        let status = null;
+
+        function adddarkMode(){
+            box.classList.add("darkMode");
+        }
+        
+        function removedarkMode(){
+            box.classList.remove("darkMode");
+        }
+        
+        function switchMode(){       
+            box.classList.toggle("darkMode");
+
+            status = box.classList.contains("darkMode");
+            console.log(status);
+            if(status){
+                box.style.color="yellow";
+            }else{
+                box.style.color="green";
+            }
+        }
+    </script>
+</body>
+</html>

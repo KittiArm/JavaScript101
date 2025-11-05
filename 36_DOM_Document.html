@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Learn JavaScript</title>
+    <script src="36_DOM_Document.js"></script>
+
+    <style>
+        .dark{
+            background-color: #fff;
+            color: #000;
+        }
+        .dark{
+            background-color: #000;
+            color: #fff;
+        }
+    </style>
+</head>
+<body class="light">
+    <p id="username">KittiArm</p>
+    <p id="age">24</p>
+    <p class="collage">KMUTT</p>
+    <button onclick="darkMode()">Dark Mode</button>
+    <button onclick="lightMode()">Light Moe</button>
+
+    <script>
+        // DOM Document
+        function displayText(){
+            const userName =  document.getElementById('username');
+            userName.style.color="white";
+            userName.style.backgroundColor="black";
+        }
+
+        // Set Attribute
+        function darkMode(){
+            const contentEl = document.querySelector('.light');
+            contentEl.setAttribute('class', 'dark');
+        }
+
+        function lightMode(){
+            const contentEl = document.querySelector('.dark');
+            contentEl.setAttribute('class', 'light');
+        }
+    </script>
+</body>
+</html>

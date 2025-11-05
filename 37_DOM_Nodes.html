@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Learn JavaScript 37</title>
+
+    <style>
+    </style>
+</head>
+<body>
+    <ul id="menu">Menu
+        <li id="item1">Item 1</li>
+        <li id="item2">Item 2</li>
+        <li id="item3">Item 3</li>
+        <li id="item4">Item 4</li>
+    </ul>
+
+    <button onclick="addItem()">Add Item</button>
+    <button onclick="removeItem()">Remove Item</button>
+    <button onclick="replaceItem()">Repace Item</button>
+    
+    <script>
+        // DOM Nodes
+
+        /*
+
+        1. document.createElement(element) : create new element
+        2. document.removeChild(element) : remove chile node
+        3. document.appendChild(element) : take element append to parent node
+        4. document.replaceChild(new, old) : replace element
+
+        */
+        let count = 1;
+        function addItem(){
+            const menu = document.getElementById('menu');
+
+            const item = document.createElement('li');
+            item.innerText = "Item"+count++;
+
+            menu.appendChild(item);
+        }
+
+        const menu = document.getElementById('menu');
+        const item = document.getElementById('item3');
+        function removeItem(){
+            menu.removeChild(item);
+        }
+
+        const newItem = document.createElement('li');
+        newItem.innerText = "X";
+        function replaceItem(){
+            menu.replaceChild(newItem, item);
+        }
+    </script>
+</body>
+</html>

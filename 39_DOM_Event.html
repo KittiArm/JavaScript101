@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DOM Event</title>
+    
+    <style>
+
+    </style>
+</head>
+<body onload="">
+    <div>
+        <label for="name">Name :</label>
+        <input type="text" name="name" id="" placeholder="Enter name" onfocus="highlight(this)" onblur="unhighlight(this)">
+    </div>
+
+    <div style="margin-top: 10px;">
+        <label for="language">Language :</label>
+        <select name="language" id="language" onchange="getMenu()">
+            <option value="JavaScript">JavaScript</option>
+            <option value="Python">Python</option>
+            <option value="Bootstrap">Bootstrap</option>
+        </select>
+
+        <p id="display"></p>
+    </div>
+
+    <div>
+        <a href="#" onmouseover="highlight(this)" onmouseout="unhighlight(this)">Menu 1</a> | <a href="#" onmouseover="highlight(this)" onmouseout="unhighlight(this)">Menu 2</a>
+    </div>
+    <script>
+        // DOM Event
+        /*
+            # Example
+            onfocus = "" : when element was : select, text, textarea
+            onblur = "" : when element lose focus : select, text, textarea
+            onchange = "" : when user change value in form : select, text, textarea
+            onselect = "" : when user choose option (via mouse) : text, textarea
+            onsubmit = "" : when submit button was clicked : form
+            onMouseover = "" : when object was over by mouse : a, div
+            onMouseout = "" : when mouse is moving out of object : a, div
+            onclick = "" : when the object was clicked : a, button, checkbox, radio, reset, submit
+            onload = "" : when document was loaded completely : body
+            onunload = "" : when the download was cancel : body
+        */
+
+        function welcome(){
+            alert("Welcome to this website !");
+        }
+
+        function highlight(obj){
+            obj.style.background="pink"
+        }
+        
+        function unhighlight(obj){
+            obj.style.background="unset"
+        }
+
+        function getMenu(){
+            const menu = document.getElementById("language");
+            const display = document.getElementById("display");
+            console.log(menu.value);
+            display.innerHTML = "<b>You chose : </b>" + menu.value;
+        }
+    </script>
+</body>
+</html>

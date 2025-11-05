@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Event Listener</title>
+</head>
+<body>
+    <label for="language">Language :</label>
+    <select name="language" id="language">
+        <option value="JavaScript">JavaScript</option>
+        <option value="Python">Python</option>
+        <option value="Bootstrap">Bootstrap</option>
+    </select>
+
+    <p id="chosen"></p>
+
+    <button id="btn">Access</button>
+
+    <script>
+        // EventListener : element.addEventListener(event, callback)
+
+        const menu = document.getElementById("language");
+        const chosen = document.getElementById("chosen");
+
+        menu.addEventListener('change', getMenu);
+
+        function getMenu(){
+            chosen.innerText = menu.value;
+            console.log(menu.value);
+        }
+
+        const btn = document.getElementById("btn");
+        btn.addEventListener('click', showWelcome);
+
+        function showWelcome(){
+            confirm("Do you need to access?")
+        }
+
+    </script>
+</body>
+</html>
